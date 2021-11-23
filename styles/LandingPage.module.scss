@@ -1,0 +1,29 @@
+$primary-color: black ;
+
+
+.landingPageContainer {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+.topSection {
+    height: 100vh;
+    width: 100%;
+}
+
+.middleSection {
+    height: 100vh;
+    width: 100%;
+    background-color: $primary-color;
+}
+
+.landingPageVideo {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -1;
+}

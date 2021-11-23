@@ -4,7 +4,7 @@
 
 # Step 1 - Create a wire frame. What will this app consist of?
 
-<img src="/Users/dreamzavenue/app-builds/ethereal-studios/images/Eth-Ruff-Draft.JPG" alt="wire frame of ethereal studios frontend">
+<img src="/Users/dreamzavenue/app-builds/ethereal-studios/public/images/Eth-Ruff-Draft.JPG" alt="wire frame of ethereal studios frontend">
 
 ### Observing the process of building past projects I noticed that having a plan of action is mandatory. forming the idea in my head and then on paper is the very first step becausse I need to know what things are doing and what goes where. This wire frame should give you an Idea where my thinking process was.
 

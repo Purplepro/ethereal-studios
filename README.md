@@ -13,3 +13,10 @@
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+### first debug
+
+you may need an appropriate loader - 
+The issue is webpack doesn't understand React's JSX syntax so it's unable to handle this file type appropriately. In order to fix this you need to set up a webpack loader to transform JSX into native JavaScript. To accomplish this you will need to leverage babel's babel-loader and install the appropriate babel preset, namely the "@babel/preset-react" preset.
+

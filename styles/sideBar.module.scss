@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Playfair+Display:wght@400;600&display=swap');
+
+$LinkColors: #FFFDEB;
+
+.sideBarContainer {
+    min-height: 100vh;
+    background-color: black;
+    width: 30vw;
+    float: right;
+}
+
+.sideBarLink {
+    color: $LinkColors;
+    font-family: Playfair Display;
+    font-size: 3.3vmax;
+    padding: 3px 10px 10px 10px;
+    font-weight: 540;
+}
+ #leftArrow {
+     color: $LinkColors;
+     cursor: pointer;
+     margin: 10px;
+     z-index: 2;
+ }
+
+ #paintingsLink {
+     height: 10vh;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-image: url('../public/images/abstract1.jpeg');
+     overflow: hidden;
+
+ }
+
+ #paintingsLink h1 {
+    color: $LinkColors;
+    text-align: center;
+     font-size: 3vmax;
+     font-family: Playfair Display;
+     font-weight: 540;
+     z-index: 5;
+     margin: 0 auto;
+     background-color: transparent;
+ }
+
+ #nftLink {
+     height: 10vh;
+     background-image: url('../public/images/NFTLink.jpeg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-color: rgb(153, 184, 194);
+     color: $LinkColors;
+     text-align: center;
+     font-size: 3vmax;
+     font-family: Playfair Display;
+     font-weight: 540;
+ }
+
+ #sculpturesLink {
+     height: 10vh;
+     background-image: url('../public/images/femsculpture.jpeg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-color: rgb(113, 124, 128);
+     color: $LinkColors;
+     text-align: center;
+     font-size: 3vmax;
+     font-family: Playfair Display;
+     font-weight: 540;
+ }
+
+ #clothingLink {
+     height: 10vh;
+     background-image: url('../public/images/ClothingPic.jpeg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-color: lightblue;
+     color: $LinkColors;
+     text-align: center;
+     font-size: 3vmax;
+     font-family: Playfair Display;
+     font-weight: 550;
+     overflow: hidden;
+ }
+
+ #clothingLink h1 {
+    color: $LinkColors;
+    text-align: center;
+     font-size: 3vmax;
+     font-family: Playfair Display;
+     font-weight: 540;
+     z-index: 5;
+     margin: 0 auto;
+     background-color: transparent;
+ }
+
+
+ .clothingVideo {
+     height: 10vh;
+ }
+
+ #paintingsLink Image {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+ }
+
+ .shopLinks {
+     display: flex;
+     flex-direction: column;
+     gap: .5em;
+ }

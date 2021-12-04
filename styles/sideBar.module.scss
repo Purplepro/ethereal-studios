@@ -17,10 +17,17 @@ $LinkColors: #FFFDEB;
     font-weight: 540;
 }
  #leftArrow {
-     color: $LinkColors;
+     fill: $LinkColors;
      cursor: pointer;
-     margin: 10px;
-     z-index: 2;
+     transform: rotate(180deg);
+     margin: auto;
+     margin-right: 19.5em;
+     margin-bottom: 2em;
+ }
+
+ #directSvg {
+    width: 10em;
+    height:5em;
  }
 
  #paintingsLink {
@@ -117,4 +124,8 @@ $LinkColors: #FFFDEB;
      display: flex;
      flex-direction: column;
      gap: .5em;
+ }
+
+ .shopL {
+    cursor: pointer;
  }

@@ -1,11 +1,12 @@
 import React from 'react'
 
-function Paintings() {
+function index() {
     return (
         <div>
-            
+            Sculptures
         </div>
     )
 }
 
-export default Paintings
+export default index
+

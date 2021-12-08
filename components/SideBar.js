@@ -4,6 +4,7 @@ import { render } from "react-dom";
 import Link from "next/link";
 import React, { useState } from "react";
 import SideBarIcon from "./SideBarIcon";
+import SideBarContent from "./SideBarContent";
 
 function SideBar() {
 
@@ -64,7 +65,7 @@ function SideBar() {
       isOpen={isOpen}
       handleClick={toggleSidebar}
       />
-      {renderSideBar()}
+      <SideBarContent isOpen={isOpen}/>
   </div>;
 }
 

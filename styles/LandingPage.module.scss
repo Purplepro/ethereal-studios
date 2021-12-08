@@ -80,10 +80,16 @@ $secondar-Color: #FFFDEB;
     transition: 0.3s ease;
     cursor: pointer;
     fill: #FFFDEB;
+    
 }
 
 #arrowSvg:hover {
     fill: red !important;
+}
+
+#directSvg {
+    width: 10em;
+    height:5em;
 }
 
 //FUTURE REFERENCE

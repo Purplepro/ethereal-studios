@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from "next/link";
 import Styles from "../styles/sideBar.module.scss";
+import gsap from 'gsap';
 
 function SideBarContent(props) {
 

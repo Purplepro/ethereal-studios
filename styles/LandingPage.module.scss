@@ -6,17 +6,20 @@ $primary-Font: Playfair;
 $secondar-Color: #FFFDEB;
 
 
+// style="overflow: hidden; outline: none; transform: 
+// translate3d(0px, 0px, 0px) skewY(0deg) scaleY(1);"
+
 
 
 .landingPageContainer {
     width: 100%;
-    padding: 0;
     margin: 0;
     scroll-behavior: smooth;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
 }
+
 
 .topSection {
     height: 100vh;
@@ -45,15 +48,21 @@ $secondar-Color: #FFFDEB;
 // Header putting in landing page to limit number of style files
 .headerContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     z-index: 1;
     position: relative;
     padding: 0;
 }
 
+ #dummyDiv {
+     width: 10vw;
+ }
+
 .headerContainer h1 {
     color: #FFFDEB;
     font-family: Montserrat;
+    margin: 0 auto;
 }
 
 .sibling {
@@ -80,16 +89,17 @@ $secondar-Color: #FFFDEB;
     transition: 0.3s ease;
     cursor: pointer;
     fill: #FFFDEB;
-    
+    margin-top: 25px;
 }
 
 #arrowSvg:hover {
-    fill: red !important;
+    fill: black !important;
 }
 
 #directSvg {
     width: 10em;
     height:5em;
+    margin: 0 auto;
 }
 
 //FUTURE REFERENCE

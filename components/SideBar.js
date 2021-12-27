@@ -2,71 +2,76 @@ import Styles from "../styles/sideBar.module.scss";
 import Image from "next/dist/client/image";
 import { render } from "react-dom";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import SideBarIcon from "./SideBarIcon";
 import SideBarContent from "./SideBarContent";
-
-function SideBar() {
-
-  const [isOpen, setIsOpen ] = useState( true )
-
-  const renderSideBar = () => {
-    if (!isOpen) {
-        return  null
-    } 
-    return (
-      <>
-        <div className={Styles.sideBarDivs}>
-          <div className={Styles.sideBarLink}>Home</div> 
-
-          <div className={Styles.sideBarLink} id={Styles.dropDown}>
-            Shop
-          </div>
-          {/* these 4 links a visible after shop is clicked */}
-          <div className={Styles.shopLinks}>
-
-            <Link href="/ShopLinks/Paintings">
-              <div id={Styles.paintingsLink} className={Styles.shopL}>
-                <h1>Paintings</h1>
-              </div>
-            </Link>
-            <Link href="/ShopLinks/NFT">
-            <div id={Styles.nftLink} className={Styles.shopL}>NFT</div>
-            </Link>
-
-            <Link href="/ShopLinks/Sculptures">
-            <div id={Styles.sculpturesLink} className={Styles.shopL}>Sculptures</div>
-            </Link>
-
-            <Link href="/ShopLinks/Clothing">
-            <div id={Styles.clothingLink} className={Styles.shopL}>
-              {/* <video autoPlay loop muted  src={require('../public/videos/clothingLink.mp4')} type="videos/mp4" className={Styles.clothingVideo}/> */}
-              <h1>Clothing</h1>
-            </div>
-            </Link>
-          </div>
-
-          <div className={Styles.sideBarLink}>Blog</div>
-          <div className={Styles.sideBarLink}>Photography</div>
-          <div className={Styles.sideBarLink}>Contact</div>
-        </div>
-      </>
-    );
-  };
+import gsap, { Elastic } from "gsap";
+import { Transition } from 'react-transition-group';
 
 
 
- const toggleSidebar = () => {
-      setIsOpen(!isOpen)
-  }
+// export interface props {
+// 	open: boolean;
+// }
 
-  return <div className={Styles.sideBarContainer}>
-      <SideBarIcon 
-      isOpen={isOpen}
-      handleClick={toggleSidebar}
-      />
-      <SideBarContent isOpen={isOpen}/>
-  </div>;
+function SideBar(props) {
+  const menuRef = useRef(null); //we are setting the ref to null to create reference directly to the dom element.
+  console.log(menuRef)  //{ current: null }
+  const [timeline, setTimeline] = useState(gsap.timeline());
+  console.log(timeline)
+  // const [isOpen, setIsOpen] = useState(true);
+
+
+  useEffect(() => {
+    setTimeline(gsap.timeline({ reversed: true }));
+  }, []);
+
+
+
+  return (
+    <Transition 
+    in={props.isOpen}
+    timeout={500}
+    mountOnEnter
+    unmountOnExit={false}
+    addEndListener={(node, done) => {
+      const sidebarRef = {current: node};
+      if (!timeline) return;
+
+      if (props.isOpen) {
+        timeline
+          .fromTo(sidebarRef.current, 0.5, {marginRight: '-30vw'}, { marginRight: 0 })
+          .fromTo(
+            menuRef.current.children,
+            {
+              scale: 0.5,
+              opacity: 0,
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+              delay: -0.5,
+              ease: Elastic.easeInOut,
+              stagger: { amount: 0.5 },
+            },
+          )
+          .play()
+          .then(done);
+      } 
+      else {
+        timeline.reverse().then(done).then(() => timeline.clear());
+      }
+    }}
+    >
+
+      <div className={Styles.sideBarContainer}>
+        {/* <SideBarIcon isOpen={isOpen} handleClick={toggleSidebar} /> */}
+        <SideBarContent isOpen={props.isOpen} ref={menuRef}/>
+      </div>
+
+    </Transition>
+  );
 }
 
 export default SideBar;

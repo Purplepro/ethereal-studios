@@ -4,14 +4,22 @@ $LinkColors: #FFFDEB;
 
 .sideBarContainer {
     min-height: 100%;
-    // position: fixed;
+    position: absolute;
     background-color: black;
     width: 100%;
     max-width: 30vw;
     float: right;
     top:0px; 
     right: 0; 
-    // z-index: 200;
+    z-index: 200;
+}
+
+.transitionContainer {
+    z-index: 400;
+}
+
+.sideBarDivs {
+    z-index: 300;
 }
 
 .sideBarLink {

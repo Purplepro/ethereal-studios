@@ -1,17 +1,15 @@
 import Sidebar from "./SideBar";
 import Footer from "./Footer";
-import Header from './Header';
-import React, { useState } from 'react'
+import Header from "./Header";
+import React, { useState } from "react";
 import SideBar from "./SideBar";
+import Styles from '../styles/global.module.scss';
 
 function Layout({ children }) {
-  const [isOpen, setIsOpen] = useState(true);
-
   return (
-    <div>
-      <SideBar/>
-      {children}
-     
+    <div className={Styles.layout}>
+      <SideBar />
+      <div>{children}</div>
     </div>
   );
 }

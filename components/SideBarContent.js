@@ -3,13 +3,11 @@ import Link from "next/link";
 import Styles from "../styles/sideBar.module.scss";
 import gsap from 'gsap';
 
-function SideBarContent(props) {
+function SideBarContent() {
 
 
     const renderLinks = () => {
-        if (!props.isOpen) {
-            return  null
-        } 
+       
         return (
           <>
             <div className={Styles.sideBarDivs}>
@@ -18,7 +16,7 @@ function SideBarContent(props) {
               <div className={Styles.sideBarLink} id={Styles.dropDown}>
                 Shop
               </div>
-              {/* these 4 links a visible after shop is clicked */}
+              {/* these 4 links are visible after shop is clicked */}
               <div className={Styles.shopLinks}>
     
                 <Link href="/ShopLinks/Paintings">
@@ -48,7 +46,7 @@ function SideBarContent(props) {
             </div>
           </>
         );
-      };
+        };
     
     return (
         <>
